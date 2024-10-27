@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWAS Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Icons CDN (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-mode">
+
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+        <h1>OWAS Dashboard</h1>
+        <div class="navbar-right">
+            <i class="fas fa-moon" id="theme-toggle" title="Switch Theme"></i>
+            <i class="fas fa-cog" title="Settings"></i>
+            <i class="fas fa-user-circle" title="Account"></i>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <h2 class="sidebar-dashboard-name">OWAS</h2>
+        <div class="sidebar-header">
+            <i class="fas fa-bars" id="sidebar-toggle"></i>
+        </div>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#gps-section"><i class="fas fa-map-marker-alt"></i> GPS Monitor</a></li>
+            <li><a href="#weight-section"><i class="fas fa-weight-hanging"></i> Weight Monitor</a></li>
+            <li><a href="#reports"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li><a href="#settings"><i class="fas fa-cogs"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <section id="dashboard">
+            <div class="widget-row">
+                <!-- Map Widget (GPS Monitor) -->
+                <div class="widget large-widget" id="gps-section">
+                    <h2>Truck Location & Route Info</h2>
+                    <div id="map"></div>
+                    <div class="gps-info">
+                        <p id="gps-data">Coordinates: Lat: Loading..., Lon: Loading...</p>
+                        <p>Last Updated: <span id="last-update">Just now</span></p>
+                        <p>Speed: <span id="speed">60 km/h</span></p>
+                        <p>Estimated Arrival: <span id="eta">12:30 PM</span></p>
+                    </div>
+                </div>
+
+                <!-- Truck Weight & Load Info Widget -->
+                <div class="widget large-widget" id="weight-section">
+                    <h2>Truck Weight & Load Information</h2>
+                    <div class="weight-widget">
+                        <div class="weight-header">
+                            <p><strong>Current Weight:</strong> <span id="weight-data">7,500 kg</span></p>
+                            <p>Capacity: <strong>12,000 kg</strong></p>
+                        </div>
+                        <div class="progress-container">
+                            <p>Load Percentage</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="additional-info">
+                            <p>Last Check: <span id="last-check">10 minutes ago</span></p>
+                            <p>Overload Status: <span id="overload-status">Normal</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Stats Widget -->
+            <div class="widget large-widget" id="stats-section">
+                <h2>Truck Performance Stats</h2>
+                <div class="stats-widget">
+                    <p>Fuel Level: <span id="fuel-level">80%</span></p>
+                    <p>Engine Temperature: <span id="engine-temp">90°C</span></p>
+                    <p>Tire Pressure: <span id="tire-pressure">32 PSI</span></p>
+                    <p>Battery Status: <span id="battery-status">Normal</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

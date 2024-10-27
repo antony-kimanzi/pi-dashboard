@@ -1,0 +1,231 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #e0f7fa; /* Light Blue Background */
+    color: #000000; /* Black Text */
+}
+
+/* Top Navbar */
+.top-navbar {
+    width: calc(100% - 40px); /* Subtracting 40px for 20px left and right margins */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    padding: 0 20px;
+    z-index: 100;
+    background-color: transparent;
+}
+
+.top-navbar h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.navbar-right {
+    position: absolute;
+    right: 50px; /* Move icons slightly to the right */
+}
+
+.navbar-right i {
+    font-size: 1.8em;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: black;
+}
+
+.navbar-right i:hover {
+    color: #0288d1; /* Light Blue hover effect */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 220px;
+    background-color: #01579b; /* Dark Blue Sidebar */
+    color: #ffffff; /* White Text */
+    padding-top: 0px;
+    position: fixed;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar Dashboard Name */
+.sidebar-dashboard-name {
+    text-align: center;
+    font-size: 22px;
+    padding: 20px 0;
+    background-color: #01579b; /* Keep dark blue for the header */
+    margin: 0;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    justify-content: flex-end; /* Collapse icon aligned right */
+    padding: 10px 20px;
+    background-color: #01579b; /* Ensure the header stays dark blue */
+}
+
+.sidebar-header i {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #ffffff;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Space below header */
+}
+
+.sidebar ul li {
+    margin: 35px 0; /* Increased spacing between items */
+    text-align: left;
+    padding-left: 20px;
+    transition: padding-left 0.3s;
+}
+
+.sidebar.collapsed ul li {
+    padding-left: 10px;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #0288d1; /* Light Blue Hover Effect */
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 220px;
+    padding: 100px 40px 40px 40px;
+    padding-top: 80px;
+    flex-grow: 1;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+    color: black;
+}
+
+.main-content.collapsed {
+    margin-left: 70px;
+}
+
+/* Widget Row Styling */
+.widget-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Widget Section */
+section#dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.widget {
+    background-color: #e0f7fa; /* Light Blue Background for Widgets */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 500px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: black;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Weight Widget Customization */
+.weight-widget {
+    padding: 20px;
+    background-color: #0288d1; /* Lighter Blue for Weight Widget */
+    color: white;
+    border-radius: 10px;
+    font-size: 1.2em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weight-header, .progress-container, .additional-info {
+    margin-bottom: 20px;
+}
+
+.progress-container p {
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #ccc;
+    height: 15px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.progress {
+    background-color: #ffeb3b;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Map Widget */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional Data Styles */
+.gps-info p, .weight-widget p, .stats-widget p {
+    font-size: 1.3em;
+    margin: 15px 0;
+    color: #555;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .widget {
+        flex: 1 1 100%;
+    }
+}
